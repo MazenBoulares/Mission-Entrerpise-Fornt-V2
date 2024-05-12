@@ -1,0 +1,23 @@
+<div class="notification-dropdown onhover-show-div">
+  <div class="dropdown-title">
+    <h6>Recent Attachments</h6>
+    <a href="javascript:void(0)" [routerLink]="['/reports']">Show all</a>
+  </div>
+  <ul>
+    @for(data of attachmentData; track data){
+      <li>
+        <div class="media" >
+          <div class="icon-notification bg-{{ data.color }}-light">
+            <i [class]="data.icon"></i>
+          </div>
+          <div class="media-body">
+            <a href="javascript:void(0)" [routerLink]="['/reports']">
+              <h6>{{ data.title }}</h6>
+            </a>
+            <span>{{ data.size }}</span>
+          </div>
+        </div>
+      </li>
+    }
+  </ul>
+</div>

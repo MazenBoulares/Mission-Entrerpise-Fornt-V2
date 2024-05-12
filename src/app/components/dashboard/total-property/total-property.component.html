@@ -1,0 +1,25 @@
+<div class="card all-properties">
+  <div class="card-body">
+    <div class="media">
+      <img src="assets/images/svg/icon/1.svg" class="img-fluid" alt="">
+      <div class="media-body">
+        <h4 class="mb-0">45</h4>
+        <h6 class="light-font">Properties</h6>
+      </div>
+      <a href="javascript:void(0)" class="arrow-animated" [routerLink]="['/property/property-list']"> See all properties
+        <app-feather-icons [icon]="'chevron-right'"></app-feather-icons>
+      </a>
+    </div>
+    <ul class="light-box">
+      @for(data of totalProperty; track data){
+        <li>
+          <img [src]="data.icon" class="img-fluid" alt="">
+          <div>
+            <h5>{{ data.total }}</h5>
+            <span class="light-font">{{ data.tag }}</span>
+          </div>
+        </li>
+      }
+    </ul>
+  </div>
+</div>

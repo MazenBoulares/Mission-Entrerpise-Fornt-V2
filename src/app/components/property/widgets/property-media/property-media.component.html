@@ -1,0 +1,18 @@
+<div class="dropzone-admin">
+  <label>Media</label>
+  <form class="dropzone" id="multiFileUpload">
+    <ngx-dropzone (change)="onSelect($event)">
+      <ngx-dropzone-label>
+        <div class="dz-message needsclick">
+          <i class="fas fa-cloud-upload-alt"></i>
+          <h6 class="f-w-700 mb-0">Drop files here or click to upload.</h6>
+        </div>
+      </ngx-dropzone-label>
+      @for(f of files; track f){
+        <ngx-dropzone-preview [removable]="true" (removed)="onRemove(f)">
+          <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+        </ngx-dropzone-preview>
+      }
+    </ngx-dropzone>
+  </form>
+</div>

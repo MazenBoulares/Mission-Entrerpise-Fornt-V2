@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-header pb-0">
+    <h5>Management Reports</h5>
+  </div>
+  <div class="card-body management-table">
+    <div class="table-responsive custom-scrollbar">
+      <table class="table table-bordernone">
+        <tbody>
+          @for(data of reportsData; track data){
+            <tr>
+              <td>
+                <div class="media">
+                  <img [src]="data.img" class="img-fluid" alt="report-type-image">
+                  <div class="media-body">
+                    <h6>Report {{ data.from_to_date}}</h6>
+                    <span>Created {{ data.created_date }}</span>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <a href="assets/text_file.txt" download>
+                  <app-feather-icons [icon]="'download'" class="light-font"></app-feather-icons>
+                </a>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-body">
+    <div class="title-about">
+      <h5>Friends</h5>
+    </div>
+    <div class="friend-list">
+      <ul class="row">
+        @for(friends of friends; track friends){
+          <li class="col-md-4 col-sm-3 col-4">
+            <img [src]="friends.url" class="img-fluid img-50" alt="user-image">
+            <h6>{{ friends.name }}</h6>
+            <a href="javascript:void(0)" class="label label-light label-flat color-4" [routerLink]="['/manage-user/add-user']">Message</a>
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</div>

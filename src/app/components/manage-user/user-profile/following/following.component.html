@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="card-body">
+    <div class="title-about">
+      <h5>Following</h5>
+    </div>
+    <ul>
+      @for(data of followingData | slice: 0: totalData; track data){
+        <li>
+          <div class="media">
+            <img [src]="data.url" class="img-fluid img-50" alt="">
+            <div class="media-body">
+              <h6>{{ data.name }}</h6>
+              <span class="light-font">{{ data.email }}</span>
+            </div>
+            <div class="status {{ data.status }}">{{ data.status | titlecase }}</div>
+          </div>
+        </li>
+      }
+    </ul>
+  </div>
+</div>

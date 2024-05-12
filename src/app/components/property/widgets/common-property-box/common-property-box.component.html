@@ -1,0 +1,69 @@
+<div class="property-box">
+  <div class="property-image">
+    <div class="property-slider">
+      <owl-carousel-o [options]="Options">
+        @for(images of propertyData.img; track images){
+          @if(images.fileType === 'image'){
+            <ng-template carouselSlide>
+              <div class="property-slider">
+                <a href="javascript:void(0)" class="bg-size" [style.background-image]="'url('+images.url+')'">
+                  <img [src]="images.url" class="bg-img" alt="property-image" style="display: none;" />
+                </a>
+              </div>
+            </ng-template>
+          }
+        }
+      </owl-carousel-o>
+    </div>
+    <div class="labels-left">
+      @for(labels of propertyData.labels; track labels){
+        <div>
+          @if(labels.includes('sale')){
+            <span class="label label-shadow">Sale</span>
+          }
+          @if(labels.includes('fees')){
+            <div>
+              <span class="label label-dark">no fees</span>
+            </div>
+          }
+          @if(labels.includes('openHouse')){
+            <span class="label label-success">open house</span>
+          }
+          @if(labels.includes('sold')){
+            <span class="label label-shadow">Sold</span>
+          }
+        </div>
+      }
+    </div>
+    <div class="seen-data">
+      <app-feather-icons [icon]="'camera'"></app-feather-icons>
+      <span>{{ propertyData.img.length }}</span>
+    </div>
+    <div class="overlay-property-box">
+      <a href="javascript:void(0)" class="effect-round" data-bs-toggle="tooltip" data-bs-placement="left" title="Compare">
+        <app-feather-icons [icon]="'shuffle'"></app-feather-icons>
+      </a>
+      <a href="javascript:void(0)" class="effect-round like" data-bs-toggle="tooltip" data-bs-placement="left" title="wishlist">
+        <app-feather-icons [icon]="'heart'"></app-feather-icons>
+      </a>
+    </div>
+  </div>
+
+  <div class="property-details">
+    <span class="font-roboto">{{ propertyData.country }}</span>
+    <a href="javascript:void(0)">
+      <h3>{{ propertyData.title }}</h3>
+    </a>
+    <h6>${{ propertyData.price | number: '1.2-2' }}*</h6>
+    <p class="font-roboto light-font">{{ propertyData.details }}</p>
+    <ul>
+      <li><img src="assets/images/svg/icon/double-bed.svg" class="img-fluid" alt="">Bed : {{ propertyData.bed }}</li>
+      <li><img src="assets/images/svg/icon/bathroom.svg" class="img-fluid" alt="">Baths : {{ propertyData.bath }}</li>
+      <li><img src="assets/images/svg/icon/square-ruler-tool.svg" class="img-fluid ruler-tool" alt="">Sq Ft : {{ propertyData.sqft }}</li>
+    </ul>
+    <div class="property-btn d-flex">
+      <span>{{ propertyData.date }}</span>
+      <button type="button" class="btn btn-dashed btn-pill color-2">Details</button>
+    </div>
+  </div>
+</div>

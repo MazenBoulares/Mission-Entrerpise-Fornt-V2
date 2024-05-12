@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="property-admin">
+      <div class="property-section section-sm">
+        <div class="row ratio_55 property-grid-2 property-map map-with-back">
+          <div class="col-xl-12">
+            <div class="property-2 row column-sm zoom-gallery property-label property-grid mt-0 property-img-item">
+              @for(data of propertyData; track data){
+                <div class="col-xl-4 col-md-6 xl-6">
+                  <app-common-property-box [propertyData]="data"></app-common-property-box>
+                </div>
+              }
+            </div>
+            <app-pagination></app-pagination>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

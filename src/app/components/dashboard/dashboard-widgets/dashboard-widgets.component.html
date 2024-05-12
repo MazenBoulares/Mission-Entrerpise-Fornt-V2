@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-body">
+    <div class="media">
+      <div class="widget-icon bg-{{ data.color }}-light">
+        <i [class]="data.icon"></i>
+      </div>
+      <div class="media-body">
+        <span>
+          {{ data.status }}
+          <span class="font-success">
+            {{ data.pr ? data.pr : data.text }}
+            @if(data.trending == true){
+              <app-feather-icons [icon]="data.trending_icon"></app-feather-icons>
+            }
+          </span>
+        </span>
+        <h4>{{ data.title }}</h4>
+        <span class="status-history">{{ data.subTitle }}</span>
+      </div>
+    </div>
+  </div>
+</div>

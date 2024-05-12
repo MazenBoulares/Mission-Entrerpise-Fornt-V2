@@ -1,0 +1,480 @@
+[
+  {
+    "id": 1,
+    "img": [
+      {
+        "url": "assets/images/property/22.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/16.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/21.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/23.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/24.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/25.jpg",
+        "fileType": "image"
+      }
+    ],
+    "thumbnail": "assets/images/property/22.jpg",
+    "propertyStatus": "For Sale",
+    "labels": ["sale"],
+    "country": "FRANCE",
+    "title": "Little Acorn Farm",
+    "price": 6558,
+    "details": "Real estate is divided into several categories, including residential property, commercial property and industrial property.",
+    "bed": 1,
+    "bath": 1,
+    "sqft": 5000,
+    "rooms": 1,
+    "date": "March 25, 2020",
+    "rent": true,
+    "propertyType": "apartment",
+    "agencies": "Lincoln"
+  },
+  {
+    "id": 2,
+    "img": [
+      {
+        "url": "assets/images/property/23.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/21.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/16.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/22.jpg",
+        "fileType": "image"
+      }
+    ],
+    "thumbnail": "assets/images/property/23.jpg",
+    "propertyStatus": "For Rent",
+    "labels": ["fees", "openHouse"],
+    "country": "usa",
+    "title": "Home in Merrick Way",
+    "price": 4513,
+    "details": "This home provides wonderful entertaining spaces with a chef kitchen opening. Elegant retreat in a quiet Coral Gables setting..",
+    "bed": 2,
+    "bath": 1,
+    "sqft": 6000,
+    "rooms": 2,
+    "date": "December 1, 2023",
+    "propertyType": "family_house",
+    "agencies": "Blue Sky"
+  },
+  {
+    "id": 3,
+    "img": [
+      {
+        "url": "assets/images/property/21.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/22.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/23.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/16.jpg",
+        "fileType": "image"
+      }
+    ],
+    "thumbnail": "assets/images/property/21.jpg",
+    "propertyStatus": "For Sale",
+    "labels": ["sale"],
+    "country": "FRANCE",
+    "title": "Allen's Across Way",
+    "price": 6558,
+    "details": "Elegant retreat in a quiet Coral Gables setting. This home provides wonderful entertaining spaces with a chef kitchen opening…",
+    "bed": 2,
+    "bath": 2,
+    "sqft": 7000,
+    "rooms": 3,
+    "date": "June 20, 2023",
+    "rent": true,
+    "propertyType": "cottage",
+    "agencies": "Zephry"
+  },
+  {
+    "id": 4,
+    "img": [
+      {
+        "url": "assets/images/property/25.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/24.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/22.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/16.jpg",
+        "fileType": "image"
+      }
+    ],
+    "thumbnail": "assets/images/property/25.jpg",
+    "propertyStatus": "For Rent",
+    "labels": ["fees", "openHouse"],
+    "country": "USA",
+    "title": "Merrick in Spring Way",
+    "price": 4513,
+    "details": "Real estate market in most countries are not as organize or efficient as markets for other, more liquid investment instruments.",
+    "bed": 2,
+    "bath": 1,
+    "sqft": 5000,
+    "rooms": 3,
+    "date": "February 6, 2019",
+    "propertyType": "condominium",
+    "agencies": "Premiere"
+  },
+  {
+    "id": 5,
+    "img": [
+      {
+        "url": "assets/images/property/16.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/21.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/22.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/23.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/24.jpg",
+        "fileType": "image"
+      }
+    ],
+    "thumbnail": "assets/images/property/16.jpg",
+    "propertyStatus": "For Sale",
+    "country": "USA",
+    "title": "Merrick in Spring Way",
+    "price": 4513,
+    "details": "Real estate market in most countries are not as organize or efficient as markets for other, more liquid investment instruments.",
+    "bed": 3,
+    "bath": 2,
+    "sqft": 3000,
+    "rooms": 4,
+    "date": "April 6, 2023",
+    "rent": true,
+    "labels": ["sale"],
+    "propertyType": "family_house",
+    "agencies": "Lincoln"
+  },
+  {
+    "id": 6,
+    "img": [
+      {
+        "url": "assets/images/property/24.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/22.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/16.jpg",
+        "fileType": "image"
+      }
+    ],
+    "thumbnail": "assets/images/property/24.jpg",
+    "propertyStatus": "For Rent",
+    "labels": ["fees", "openHouse"],
+    "country": "FRANCE",
+    "title": "Little Acorn Farm",
+    "price": 6558,
+    "details": "Real estate is divided into several categories, including residential property, commercial property and industrial property.",
+    "bed": 5,
+    "bath": 4,
+    "sqft": 5000,
+    "rooms": 5,
+    "date": "August 4, 2023",
+    "propertyType": "family_house",
+    "agencies": "Blue Sky"
+  },
+  {
+    "id": 7,
+    "img": [
+      {
+        "url": "assets/images/property/9.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/10.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/11.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/12.jpg",
+        "fileType": "image"
+      }
+    ],
+    "thumbnail": "assets/images/property/9.jpg",
+    "propertyStatus": "For Sale",
+    "country": "FRANCE",
+    "title": "High Valley Fields",
+    "price": 5580,
+    "details": "A great name for a ranch surrounded by valleys. This home provides entertaining spaces with a chef kitchen opening.",
+    "home": "Virtual Home",
+    "bed": 1,
+    "bath": 1,
+    "sqft": 2500,
+    "rooms": 1,
+    "date": "June 27, 2023",
+    "rent": true,
+    "labels": ["sale"],
+    "propertyType": "apartment",
+    "agencies": "Lincoln"
+  },
+  {
+    "id": 8,
+    "img": [
+      {
+        "url": "assets/images/property/12.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/11.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/10.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/9.jpg",
+        "fileType": "image"
+      }
+    ],
+    "thumbnail": "assets/images/property/12.jpg",
+    "propertyStatus": "For Rent",
+    "country": "FRANCE",
+    "title": "Home in Merrick Way",
+    "price": 6558,
+    "details": "Elegant retreat in a quiet Coral Gables setting. This home provides wonderful entertaining spaces with a chef kitchen opening.",
+    "home": "Virtual Home",
+    "bed": 1,
+    "bath": 1,
+    "sqft": 1500,
+    "rooms": 2,
+    "date": "June 20, 2023",
+    "propertyType": "cottage",
+    "agencies": "Premiere",
+    "labels": ["fees", "openHouse"]
+  },
+  {
+    "id": 9,
+    "img": [
+      {
+        "url": "assets/images/property/21.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/23.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/24.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/25.jpg",
+        "fileType": "image"
+      }
+    ],
+    "thumbnail": "assets/images/property/22.jpg",
+    "propertyStatus": "For Sale",
+    "labels": ["sale"],
+    "country": "FRANCE",
+    "title": "Hidden Spring Hideway",
+    "price": 6558,
+    "details": "Real estate market in most countries are not as organize or efficient as markets for other, more liquid investment instruments.",
+    "bed": 1,
+    "bath": 1,
+    "sqft": 5000,
+    "rooms": 1,
+    "date": "March 25, 2020",
+    "rent": true,
+    "propertyType": "apartment",
+    "agencies": "Lincoln"
+  },
+  {
+    "id": 10,
+    "img": [
+      {
+        "url": "assets/images/property/16.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/23.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/21.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/22.jpg",
+        "fileType": "image"
+      }
+    ],
+    "thumbnail": "assets/images/property/23.jpg",
+    "propertyStatus": "For Rent",
+    "labels": ["fees", "openHouse"],
+    "country": "usa",
+    "title": "Magnolia Ranch",
+    "price": 4513,
+    "details": "This home provides wonderful entertaining spaces with a chef kitchen opening… Elegant retreat in a quiet Coral Gables setting.",
+    "bed": 2,
+    "bath": 1,
+    "sqft": 6000,
+    "rooms": 2,
+    "date": "December 1, 2023",
+    "propertyType": "family_house",
+    "agencies": "Blue Sky"
+  },
+  {
+    "id": 11,
+    "img": [
+      {
+        "url": "assets/images/property/16.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/21.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/22.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/23.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/24.jpg",
+        "fileType": "image"
+      }
+    ],
+    "thumbnail": "assets/images/property/16.jpg",
+    "propertyStatus": "For Sale",
+    "country": "USA",
+    "title": "Magnolia Ranch",
+    "price": 4513,
+    "details": "Real estate market in most countries are not as organize or efficient as markets for other, more liquid investment instruments.",
+    "bed": 3,
+    "bath": 2,
+    "sqft": 3000,
+    "rooms": 4,
+    "date": "April 6, 2023",
+    "rent": true,
+    "labels": ["sale"],
+    "propertyType": "condominium",
+    "agencies": "Lincoln"
+  },
+  {
+    "id": 12,
+    "img": [
+      {
+        "url": "assets/images/property/9.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/10.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/11.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/12.jpg",
+        "fileType": "image"
+      }
+    ],
+    "thumbnail": "assets/images/property/9.jpg",
+    "propertyStatus": "For Sale",
+    "country": "FRANCE",
+    "title": "High Valley Fields",
+    "price": 5580,
+    "details": "A great name for a ranch surrounded by valleys. This home provides wonderful entertaining spaces with a chef kitchen opening.",
+    "home": "Virtual Home",
+    "bed": 1,
+    "bath": 1,
+    "sqft": 2500,
+    "rooms": 1,
+    "date": "June 27, 2023",
+    "rent": true,
+    "labels": ["sale"],
+    "propertyType": "cottage",
+    "agencies": "Lincoln"
+  },
+  {
+    "id": 13,
+    "img": [
+      {
+        "url": "assets/images/property/21.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/22.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/23.jpg",
+        "fileType": "image"
+      },
+      {
+        "url": "assets/images/property/16.jpg",
+        "fileType": "image"
+      }
+    ],
+    "thumbnail": "assets/images/property/21.jpg",
+    "propertyStatus": "For Sale",
+    "labels": ["sale"],
+    "country": "FRANCE",
+    "title": "Allen's Across Way",
+    "price": 6558,
+    "details": "Elegant retreat in a quiet Coral Gables setting. This home provides wonderful entertaining spaces with a chef kitchen opening…",
+    "bed": 2,
+    "bath": 2,
+    "sqft": 7000,
+    "rooms": 3,
+    "date": "June 20, 2023",
+    "rent": true,
+    "propertyType": "condominium",
+    "agencies": "Zephry"
+  }
+]

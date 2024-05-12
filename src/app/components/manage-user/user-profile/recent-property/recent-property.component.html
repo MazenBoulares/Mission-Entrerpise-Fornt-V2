@@ -1,0 +1,39 @@
+<div class="table-responsive custom-scrollbar">
+  <table class="table table-bordernone mb-0">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Rate</th>
+        <th>Deposit</th>
+        <th>Start date</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(propertyDetails of recentProperty; track propertyDetails){
+        <tr>
+          <td [class.pb-0]="propertyDetails.margin">
+            <div class="media">
+              <img [src]="propertyDetails.url" class="img-fluid img-80" alt="">
+              <div class="media-body">
+                <h6>{{ propertyDetails.name }}</h6>
+                <span class="light-font">{{ propertyDetails.city }}</span>
+              </div>
+            </div>
+          </td>
+          <td [class.pb-0]="propertyDetails.margin">
+            <h6>{{ propertyDetails.rate }}</h6>
+            <span class="light-font">monthly rent</span>
+          </td>
+          <td [class.pb-0]="propertyDetails.margin">
+            <h6>{{ propertyDetails.deposit }}</h6>
+            <span class="light-font">deposit</span>
+          </td>
+          <td [class.pb-0]="propertyDetails.margin">
+            <h6>{{ propertyDetails.start_date }}</h6>
+            <span class="light-font">start date</span>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

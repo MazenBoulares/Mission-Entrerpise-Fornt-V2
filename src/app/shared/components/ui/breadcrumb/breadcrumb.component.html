@@ -1,0 +1,23 @@
+<div class="page-header">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="page-header-left">
+        <h3>{{ title }}
+          <small>Welcome to admin panel</small>
+        </h3>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <!-- Breadcrumb start -->
+      <ol class="breadcrumb pull-right">
+        <li class="breadcrumb-item">
+          <a [routerLink]="['/dashboard']">
+            <i class="fa fa-home"></i>
+          </a>
+        </li>
+        <li class="breadcrumb-item active">{{breadcrumbs.parentBreadcrumb}}</li>
+      </ol>
+      <!-- Breadcrumb end -->
+    </div>
+  </div>
+</div>

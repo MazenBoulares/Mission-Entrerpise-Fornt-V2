@@ -1,0 +1,31 @@
+<div class="property-wizard horizontal-wizard">
+  <div class="row wizard-box">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body admin-wizard">
+          <div class="wizard-step-container">
+            <app-user-wizard-steps [stepsData]="stepsData" [activeSteps]="activeSteps"></app-user-wizard-steps>
+            <div class="wizard-form-details log-in">
+              <div class="wizard-step-1" [ngClass]="activeSteps == 1 ? 'd-block' : 'd-none'">
+                <form class="row" id="needs-validation" novalidate="">
+                  <app-user-personal-details [email]="false" [type]="'wizard'" [button]="true" (activeSteps)="receiveChildData($event)"></app-user-personal-details>
+                </form>
+              </div>
+              <div class="wizard-step-2" [ngClass]="activeSteps == 2 ? 'd-block' : 'd-none'">
+                <form class="row" id="needs-validation1" novalidate="">
+                  <app-user-login-details [email]="true" [type]="'wizard'" [button]="true" (activeSteps)="receiveChildData($event)"></app-user-login-details>
+                </form>
+              </div>
+              <div class="wizard-step-3" [ngClass]="activeSteps == 3 ? 'd-block' : 'd-none'">
+                <div class="dropzone-main">
+                  <label>Media</label>
+                  <app-user-media (activeSteps)="receiveChildData($event)" [button]="true"></app-user-media>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

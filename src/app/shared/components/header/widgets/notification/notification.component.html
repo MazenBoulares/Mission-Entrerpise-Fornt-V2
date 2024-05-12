@@ -1,0 +1,40 @@
+<div class="notification-dropdown onhover-show-div">
+  <div class="dropdown-title">
+    <h6>Notifications</h6>
+    <a href="javascript:void(0)" [routerLink]="['/property/favourites']">Show all</a>
+  </div>
+  <ul>
+    @for(data of notificationData; track data){
+      <li>
+        <div class="media">
+          <div class="icon-notification bg-{{ data.color }}-light">
+            <i [class]="data.icon"></i>
+          </div>
+          <div class="media-body">
+            <h6>{{ data.title }}</h6>
+            <span>{{ data.time }}</span>
+            @if(data.subTitle){
+              <p class="mb-0">{{ data.subTitle }}</p>
+            }
+            <ul class="user-group">
+              @for(images of data.img; track images){
+                <li>
+                  <a href="javascript:void(0)">
+                    <img [src]="images.url" class="img-fluid" alt="">
+                  </a>
+                </li>
+              }
+              @if(data.reply){
+                <li class="reply">
+                  <a href="javascript:void(0)">
+                    Reply
+                  </a>
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+      </li>
+    }
+  </ul>
+</div>

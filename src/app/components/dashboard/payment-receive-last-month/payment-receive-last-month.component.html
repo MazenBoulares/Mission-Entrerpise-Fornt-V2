@@ -1,0 +1,26 @@
+<div class="card invoice-card">
+  <div class="card-header pb-0">
+    <div>
+      <h5>Last Month</h5>
+    </div>
+  </div>
+  <div class="card-body calculations">
+    <ul>
+      @for(data of lastMonthData; track data){
+        <li>
+          <h5 class="font-{{ data.color }}">{{ data.amount }}</h5>
+          <h6 class="light-font mb-0">{{ data.title }}</h6>
+        </li>
+      }
+    </ul>
+    <div class="d-flex">
+      <a href="javascript:void(0)" class="label label-light color-4" [routerLink]="['/agents/invoice']">
+        <i class="fas fa-hand-holding-usd me-1"></i>
+        Payments Receive</a>
+      <a href="javascript:void(0)" class="arrow-animated" [routerLink]="['/agents/invoice']">
+        View all
+        <app-feather-icons [icon]="'chevron-right'"></app-feather-icons>
+      </a>
+    </div>
+  </div>
+</div>

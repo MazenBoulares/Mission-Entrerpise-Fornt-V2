@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="card-header">
+    <h5>Assignees</h5>
+  </div>
+  <div class="card-body assign-table pt-0">
+    <div class="table-responsive custom-scrollbar">
+      <table class="table table-bordernone">
+        <tbody>
+          @for(data of assignessData; track data){
+            <tr>
+              <td>
+                <div class="media">
+                  <img [src]="data.img" class="img-fluid" alt="">
+                  <div class="media-body">
+                    <a href="javascript:boid(0)" [routerLink]="['/manage-user/user-profile']">
+                        <h6>{{ data.name }}</h6>
+                    </a>
+                    <span>{{ data.title }}</span>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <h6 class="font-danger">{{ data.openData }}</h6>
+                <span>Open</span>
+              </td>
+              <td>
+                <h6 class="font-warning">{{ data.escaletedData}}</h6>
+                <span>Escaleted</span>
+              </td>
+              <td>
+                <h6 class="font-success">{{ data.completedData}}</h6>
+                <span>Completed</span>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

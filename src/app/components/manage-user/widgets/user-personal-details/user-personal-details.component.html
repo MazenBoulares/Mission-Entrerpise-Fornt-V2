@@ -1,0 +1,38 @@
+<span class="row" novalidate [formGroup]="myForm" (ngSubmit)="next()">
+  <div class="form-group col-md-4 col-sm-6">
+    <label>First name <span class="font-danger">*</span></label>
+    <input type="text" class="form-control" [placeholder]="formOption == 'Add' || type == 'wizard' ? 'enter your name' : ''" [value]="formOption == 'Edit' ? firstName : ''" formControlName="first_name" [ngClass]="{ 'is-invalid' : (first_name?.touched || validate) && first_name?.errors && type == 'wizard' , 'is-valid' : !first_name?.errors && type == 'wizard'}">
+  </div>
+  <div class="form-group col-md-4 col-sm-6">
+    <label>Last name <span class="font-danger">*</span></label>
+    <input type="text" class="form-control" [placeholder]="formOption == 'Add' || type == 'wizard' ? 'enter your surname' : lastName" [value]="formOption == 'Edit' ? lastName : ''" formControlName="last_name" [ngClass]="{ 'is-invalid' : (last_name?.touched || validate) && last_name?.errors && type == 'wizard' , 'is-valid' : !last_name?.errors && type == 'wizard'}">
+  </div>
+  <div class="form-group col-md-4 col-sm-6">
+    <label>Gender <span class="font-danger">*</span></label>
+    <select class="form-control" formControlName="gender" [ngClass]="{ 'is-invalid' : (gender?.touched || validate) && gender?.errors && type == 'wizard' , 'is-valid' : !gender?.errors && type == 'wizard'}">
+      <option value="">Gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+  </div>
+  <div class="form-group col-sm-6" [ngClass]="{ 'col-md-4' : type != 'wizard'}">
+    <label>Phone number <span class="font-danger">*</span></label>
+    <input type="number" class="form-control" [placeholder]="formOption == 'Add' || type == 'wizard' ? 'enter your mobile number' : phoneNumber" [value]="formOption == 'Edit' ? phoneNumber : ''" minlength="10" maxlength="10" formControlName="phone" [ngClass]="{'is-invalid' : validate && phone?.errors && type == 'wizard', 'is-valid' : !phone?.errors && type == 'wizard'}">
+  </div>
+  <div class="form-group col-sm-6" [ngClass]="{ 'col-md-4' : type != 'wizard'}">
+    <label>Date of birth <span class="font-danger">*</span></label>
+    <input class="form-control" [placeholder]="formOption == 'Add' ? '18/1/2000' : dob" [value]="formOption == 'Edit' ? dob : ''" id="datepicker" type="date" formControlName="date" [ngClass]="{'is-invalid' : validate && date?.errors && type == 'wizard', 'is-valid' : !date?.errors && type == 'wizard'}"/>
+  </div>
+  @if(email){
+    <div class="form-group col-md-4 col-sm-6">
+      <label>Email Address <span class="font-danger">*</span></label>
+      <input type="email" class="form-control" [placeholder]="formOption == 'Add' || type == 'wizard' ? 'enter your email' : emailAddress" [value]="formOption == 'Edit' ? emailAddress : ''">
+    </div>
+  }
+  @if(button){
+    <div class="next-btn text-end col-sm-12">
+      <button type="button" class="btn btn-gradient color-4 next1 btn-pill" (click)="next()">Next <i class="fas fa-arrow-right ms-2"></i></button>
+    </div>
+  }
+</span>
+

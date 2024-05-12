@@ -1,0 +1,28 @@
+<div class="page-wrapper">
+  <div class="page-main-header row" [class.close_icon]="layout.sidebarOpen">
+    <div id="sidebar-toggle" class="toggle-sidebar col-auto" (click)="sidebarToggle()">
+      <app-feather-icons [icon]="'chevrons-left'"></app-feather-icons>
+    </div>
+    <div class="nav-right col p-0">
+      <app-header></app-header>
+    </div>
+  </div>
+  <div class="page-body-wrapper">
+    <div class="page-sidebar" [class.close_icon]="layout.sidebarOpen">
+    <app-menu></app-menu>
+    </div>
+    <div class="page-body">
+      <div class="container-fluid" >
+        <app-breadcrumb></app-breadcrumb>
+      </div>
+      <div [ngClass]="{ 'container-lg' : router.url == '/agents/invoice' , 'container-fluid' : router.url != '/agents/invoice'}">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    <footer class="footer">
+      <app-footer></app-footer>
+    </footer>
+  </div>
+</div>
+
+<app-customizer></app-customizer>

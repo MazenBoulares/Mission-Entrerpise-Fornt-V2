@@ -1,0 +1,33 @@
+<div class="card sales-details">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-sm-4">
+        <app-sales-status></app-sales-status>
+        <app-chart-legends></app-chart-legends>
+        <div class="last-updated light-box">
+          <span>Last updated</span>
+          <h5>Dec 26, 2023</h5>
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <div class="monthly-sales">
+          <div class="icon-box">
+            <i class="fas fa-chevron-left light-font"></i>
+          </div>
+          <h6>Octobar, 2023</h6>
+          <div class="icon-box">
+            <i class="fas fa-chevron-right light-font"></i>
+          </div>
+        </div>
+        <div class="bar-sales">
+          <div id="sale-chart">
+            <apx-chart [series]="salesSummaryChart.series" [chart]="salesSummaryChart.chart" [colors]="salesSummaryChart.colors"
+                       [plotOptions]="salesSummaryChart.plotOptions" [dataLabels]="salesSummaryChart.dataLabels" [legend]="salesSummaryChart.legend"
+                       [xaxis]="salesSummaryChart.xaxis" [responsive]="salesSummaryChart.responsive">
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

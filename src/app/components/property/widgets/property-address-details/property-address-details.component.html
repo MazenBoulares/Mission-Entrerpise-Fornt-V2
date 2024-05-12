@@ -1,0 +1,37 @@
+<span class="row">
+  <div class="form-group col-sm-6">
+    <label>Address</label>
+    <input type="text" class="form-control" [placeholder]="formOption == 'Add' ? 'Address of your property' : address" [value]="formOption == 'Edit' ? address : ''">
+  </div>
+  <div class="form-group col-sm-6">
+    <label>Zip code</label>
+    <input type="text" class="form-control" [placeholder]="formOption == 'Add' ? '39702' : zipCode" [value]="formOption == 'Edit' ? zipCode : ''">
+  </div>
+  <div class="form-group col-sm-4">
+    <label>Any Country</label>
+    <div class="dropdown" ngbDropdown>
+      <span class="dropdown-toggle font-rubik" ngbDropdownToggle><span>{{ countryValue }}</span> <i class="fas fa-angle-down"></i></span>
+      <div class="dropdown-menu text-start" ngbDropdownMenu>
+        @for(country of countryData; track country){
+          <a class="dropdown-item" href="javascript:void(0)" ngbDropdownItem (click)="countryValue = country.value">{{ country.title }}</a>
+        }
+      </div>
+    </div>
+  </div>
+  <div class="form-group col-sm-4">
+    <label>Any City</label>
+    <div class="dropdown" ngbDropdown>
+      <span class="dropdown-toggle font-rubik" ngbDropdownToggle><span>{{ cityValue }}</span> <i class="fas fa-angle-down"></i></span>
+      <div class="dropdown-menu text-start" ngbDropdownMenu>
+        @for(city of cityData; track city){
+          <a class="dropdown-item" ngbDropdownItem (click)="cityValue = city.value">{{ city.title }}</a>
+        }
+      </div>
+    </div>
+  </div>
+  <div class="form-group col-sm-4">
+    <label>Landmark</label>
+    <input type="text" class="form-control" [placeholder]="formOption == 'Add' ? 'landmark place name' : landMark" [value]="formOption == 'Edit' ? landMark : ''">
+  </div>
+
+</span>

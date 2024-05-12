@@ -1,0 +1,59 @@
+<div class="card expiring-card">
+  <div class="card-header">
+    <div class="d-flex">
+      <h5>Sold out</h5>
+      <a href="javascript:void(0)" class="arrow-animated" [routerLink]="['/type/apartment']">
+        See Details
+        <app-feather-icons [icon]="'chevron-right'"></app-feather-icons>
+      </a>
+    </div>
+  </div>
+  <div class="card-body pt-0 expiring-details">
+    <div class="expiring-chart">
+      <div id="Radial-chart">
+        <apx-chart [series]="soldOutChart.series" [chart]="soldOutChart.chart" [plotOptions]="soldOutChart.plotOptions"
+                   [grid]="soldOutChart.grid" [colors]="soldOutChart.colors" [labels]="soldOutChart.labels"
+                   [responsive]="soldOutChart.responsive">
+        </apx-chart>
+      </div>
+    </div>
+    <div class="chart-detail">
+      <div class="d-flex">
+        <div class="media">
+          <div class="with-reload">
+            <img src="assets/images/svg/icon/1.svg" class="img-fluid" alt="">
+          </div>
+          <div class="media-body">
+            <h5>78</h5>
+            <span class="light-font">Properties</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="legend-exiring">
+      <ul>
+        <li>
+          <div class="d-flex">
+            <span class="square-series bg-primary"></span>
+            <h6>10</h6>
+          </div>
+          <span class="light-font">> 20 Days</span>
+        </li>
+        <li>
+          <div class="d-flex">
+            <span class="square-series bg-success"></span>
+            <h6>50</h6>
+          </div>
+          <span class="light-font">21 - 40 Days</span>
+        </li>
+        <li>
+          <div class="d-flex">
+            <span class="square-series bg-warning"></span>
+            <h6>75</h6>
+          </div>
+          <span class="light-font">41 - 80 Days</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-header pb-0">
+    <h5>Visitors Location</h5>
+  </div>
+  <div class="card-body">
+    <div class="jvector-map-report" id="asia">
+      <google-map width="100%" height="350px" [options]="asiaMapOptions">
+        @for(marker of markers; track marker){
+          <map-marker [position]="marker.position" [label]="marker.label">
+          </map-marker>
+        }
+      </google-map>
+    </div>
+  </div>
+</div>

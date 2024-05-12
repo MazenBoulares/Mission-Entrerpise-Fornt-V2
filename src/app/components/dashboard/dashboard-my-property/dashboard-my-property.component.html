@@ -1,0 +1,38 @@
+<div class="card">
+  <div class="card-header pb-0">
+    <div class="d-flex">
+      <h5>My properties</h5>
+      <a href="javascript:void(0)" [routerLink]="['/property/add-property']">+ New</a>
+    </div>
+  </div>
+  <div class="card-body properties-list">
+    @for(data of dashboardProperty; track data){
+      <div class="media">
+        <img [src]="data.img" class="img-fluid" alt="proeprty-image">
+        <div class="media-body">
+          <a href="javascript:void(0)" [routerLink]="['/property/property-list']">
+            <h6>{{ data.title }}</h6>
+          </a>
+          <ul>
+            <li>
+              <img src="assets/images/svg/icon/double-bed.svg" class="img-fluid" alt="bed-icon">
+              <span> {{ data.bed }}</span>
+            </li>
+            <li>
+              <img src="assets/images/svg/icon/bathroom.svg" class="img-fluid" alt="bathroom-icon">
+              <span> {{ data.bath }}</span>
+            </li>
+            <li>
+              <img src="assets/images/svg/icon/sofa.svg" class="img-fluid" alt="sofa-icon">
+              <span> {{ data.room }}</span>
+            </li>
+          </ul>
+          <div>
+            <span class="light-font">Status: </span>
+            <span class="label label-light {{ data.statusColor }}">{{ data.status }}</span>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

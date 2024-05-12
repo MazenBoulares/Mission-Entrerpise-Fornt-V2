@@ -1,0 +1,34 @@
+
+  <ul class="header-menu">
+    <li>
+      <app-search></app-search>
+    </li>
+    <li>
+      <app-full-screen></app-full-screen>
+    </li>
+    <li class="onhover-dropdown">
+      <a href="javascript:void(0)">
+        <app-feather-icons [icon]="'save'"></app-feather-icons>
+      </a>
+      <app-attachments></app-attachments>
+    </li>
+    <li class="onhover-dropdown notification-box">
+      <a href="javascript:void(0)">
+        <app-feather-icons [icon]="'bell'"></app-feather-icons>
+        <span class="label label-shadow label-pill notification-badge">3</span>
+      </a>
+      <app-notification></app-notification>
+    </li>
+    <li class="onhover-dropdown">
+      <a href="javascript:void(0)">
+        <app-feather-icons [icon]="'mail'"></app-feather-icons>
+      </a>
+      <app-message></app-message>
+    </li>
+    <li class="profile-avatar onhover-dropdown">
+      <div>
+        <img src="assets/images/avatar/3.jpg" class="img-fluid" alt="">
+      </div>
+      <app-user-profile></app-user-profile>
+    </li>
+  </ul>

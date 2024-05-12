@@ -1,0 +1,24 @@
+<div class="notification-dropdown chat-dropdown onhover-show-div">
+  <div class="dropdown-title">
+    <h6>Messages</h6>
+    <a [routerLink]="['/manage-user/user-profile']">View all</a>
+  </div>
+  <ul>
+    @for(data of messageData; track data){
+      <li>
+        <div class="media">
+          <div class="chat-user">
+            <img [src]="data.img" class="img-fluid" alt="">
+          </div>
+          <div class="media-body">
+            <a [routerLink]="['/manage-user/user-profile']">
+              <h6>{{ data.name }}</h6>
+            </a>
+            <span>{{ data.message }}</span>
+          </div>
+          <div class="status {{ data.status }}">{{ data.status | titlecase }}</div>
+        </div>
+      </li>
+    }
+  </ul>
+</div>

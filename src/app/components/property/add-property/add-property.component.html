@@ -1,0 +1,36 @@
+<span class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-header pb-0">
+        <h5>Add property details</h5>
+      </div>
+      <div class="card-body admin-form">
+        <form class="gx-3">
+          <app-property-basic-details></app-property-basic-details>
+          <app-property-address-details></app-property-address-details>
+        </form>
+          <app-property-media></app-property-media>
+          <form class="row gx-3">
+            <div class="form-group col-sm-12">
+              <label>video (mp4)</label>
+              <input type="text" class="form-control" placeholder="mp4 video link">
+            </div>
+            <div class="form-group col-sm-12 mb-0">
+              <label>Additional features</label>
+              <div class="additional-checkbox">
+                @for(features of AdditionalFeatures; track features){
+                  <label for="{{ features.id }}">
+                    <input class="checkbox_animated color-4" id="{{ features.id }}" type="checkbox" [checked]="features.checked"> {{ features.title }}
+                  </label>
+                }
+              </div>
+            </div>
+            <div class="form-btn col-sm-12">
+              <button type="button" class="btn btn-pill btn-gradient color-4">Submit</button>
+              <button type="button" class="btn btn-pill btn-dashed color-4">Cancel</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</span>

@@ -1,0 +1,39 @@
+<div class="property-box">
+  <div class="agent-image">
+    <div [style.background-image]="'url('+userDetails.img+')'" class="bg-size">
+      <img [src]="userDetails.img" class="bg-img" alt="">
+      @if(userDetails.newUser){
+        <span class="label label-shadow">New user</span>
+      }
+      @if(property){
+        <span class="label label-shadow">{{ userDetails.property }} properties</span>
+      }
+      <div class="agent-overlay"></div>
+      <div class="overlay-content">
+        <ul>
+          <li><a href="https://www.google.com/" target="_blank"><img src="assets/images/about/icon-1.png" alt=""></a>
+          </li>
+          <li><a href="https://twitter.com/" target="_blank"><img src="assets/images/about/icon-2.png" alt=""></a>
+          </li>
+          <li><a href="https://www.facebook.com/" target="_blank"><img src="assets/images/about/icon-3.png" alt=""></a>
+          </li>
+        </ul>
+        <span>Connect</span>
+      </div>
+    </div>
+  </div>
+  <div class="agent-content">
+    <h5>{{ userDetails.title }}</h5>
+    <p class="font-roboto">{{ userDetails.subTitle }}</p>
+    <ul class="agent-contact">
+      <li [ngClass]="{ 'show' : isMobile }">
+        <i class="fas fa-phone-alt"></i>
+        <span [ngClass]="isMobile == true ? 'phone-number' : 'character'" >+91 {{ mobileNumber }}</span>
+        <span class="label label-light label-flat color-2" (click)="showMobile(userDetails)" style="font-size: 14px;"> {{ isMobile ? 'hide' : 'show'}} </span>
+      </li>
+      <li><i class="fas fa-envelope"></i> {{ userDetails.email }}</li>
+      <li><i class="fas fa-fax"></i> {{ userDetails.fax }}</li>
+    </ul>
+    <a href="javascript:void(0)" [routerLink]="[type == 'agent' ? '/agents/agent-profile' : '/manage-user/user-profile']">View profile <i class="fas fa-arrow-right"></i></a>
+  </div>
+</div>

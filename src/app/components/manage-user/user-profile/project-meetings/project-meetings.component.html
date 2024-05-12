@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-body">
+    <div class="partner-info">
+      <div class="title-about">
+        <h5>Project meetings</h5>
+      </div>
+      <div class="time-details">
+        <div>
+          <ul>
+            @for(images of projectMeetings; track images){
+              <li>
+                <img [src]="images.url" class="img-fluid" alt="user-image">
+              </li>
+            }
+          </ul>
+          <a href="javascript:void(0)" class="arrow-animated" [routerLink]="['/manage-user/all-user']">
+            Join now
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+        </div>
+        <div>
+          <h6>4:00 - 5:00 PM</h6>
+          <span class="label label-light color-4">10 mins left</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

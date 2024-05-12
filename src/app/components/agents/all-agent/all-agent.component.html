@@ -1,0 +1,13 @@
+<div class="row agent-section property-section agent-lists">
+  <div class="col-lg-12">
+    <div class="ratio2_3">
+      <div class="property-2 row column-sm property-label property-grid">
+        @for(data of userData; track data){
+          <div class="col-xl-4 col-md-6 wow fadeInUp">
+           <app-common-user-details [userDetails]="data" [property]="true" [type]="'agent'"></app-common-user-details>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>
