@@ -35,4 +35,18 @@ export class PropertyService {
     );
   }
 
+
+  public submitPropertySeeker(user: User): Observable<User> {
+    return this.http.post<User>(`http://localhost:8082/users/propertyseeker`, user);
+  }
+
+  public submitLandlord(user: User): Observable<User> {
+    return this.http.post<User>(`http://localhost:8082/users/landlord`, user);
+  }
+
+  public submitAdmin(user: User): Observable<User> {
+    return this.http.post<User>(`http://localhost:8082/users/admin`, user);
+  }
+
+
 }

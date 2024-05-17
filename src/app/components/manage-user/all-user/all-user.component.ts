@@ -36,9 +36,9 @@ export class AllUserComponent {
     );
   }
 
-  trackByUserId(index: number, item: User): number {
-    return item.userId; // Assuming userId is a unique identifier for each user
-  }
+  // trackByUserId(index: number, item: User): number {
+  //   return item.userId; // Assuming userId is a unique identifier for each user
+  // }
 
 
 }

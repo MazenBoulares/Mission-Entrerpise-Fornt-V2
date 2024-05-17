@@ -25,14 +25,14 @@ export const content : Routes = [
     },
     loadChildren: () => import("../../components/manage-user/manage-user.module").then(m => m.ManageUserModule)
   },
-  {
-    path: 'agents',
-    data: {
-      title: 'Agents',
-      breadcrumb: 'Agents'
-    },
-    loadChildren: () => import('../../components/agents/agents.module').then(m => m.AgentsModule)
-  },
+  // {
+  //   path: 'agents',
+  //   data: {
+  //     title: 'Agents',
+  //     breadcrumb: 'Agents'
+  //   },
+  //   loadChildren: () => import('../../components/agents/agents.module').then(m => m.AgentsModule)
+  // },
   {
     path: 'map',
     data: {

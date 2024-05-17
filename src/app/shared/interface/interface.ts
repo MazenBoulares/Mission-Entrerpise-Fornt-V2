@@ -110,94 +110,34 @@ export interface reports{
 
 //new user 
 
-// Interface for Property Seeker
-// export interface PropertySeeker {
-//   userId: number | null;
-//   username: string;
-//   password: string;
-//   token: any; // Change the type according to your needs
-//   email: string;
-//   firstName: string;
-//   lastName: string;
-//   phoneNumber: string;
-//   address: string;
-//   dateOfBirth: string;
-//   registrationDate: string;
-//   desiredLocation: string;
-//   minBudget: number;
-//   maxBudget: number;
-//   preferredPropertyType: string;
-//   notificationEnabled: boolean;
-// }
-
-// // Interface for Admin
-// export interface Admin {
-//   userId: number | null;
-//   username: string;
-//   password: string;
-//   token: any; // Change the type according to your needs
-//   email: string;
-//   firstName: string;
-//   lastName: string;
-//   phoneNumber: string;
-//   address: string;
-//   dateOfBirth: string;
-//   registrationDate: string;
-//   department: string;
-//   role: string;
-//   superAdmin: boolean;
-//   accessLevel: number;
-// }
-
-// // Interface for Landlord
-// export interface Landlord {
-//   userId: number | null;
-//   username: string;
-//   password: string;
-//   token: any; // Change the type according to your needs
-//   email: string;
-//   firstName: string;
-//   lastName: string;
-//   phoneNumber: string;
-//   address: string;
-//   dateOfBirth: string;
-//   registrationDate: string;
-//   propertyType: string;
-//   numberOfProperties: number;
-//   company: string;
-//   active: boolean;
-//   rating: number;
-// }
-
-
 // export type users2 = PropertySeeker | Admin | Landlord;
 
 
 export interface User {
-  userId: number;
-  username: string;
-  password: string;
-  token: any; // Change the type according to your needs
-  email: string;
-  firstName: string;
-  lastName: string;
+  userId?: number ;
+  username?: string| null;
+  password?: string| null;
+  token?: any; // Change the type according to your needs
+  email?: string| null;
+  firstName?: string| null
+  lastName?: string| null;
   phoneNumber: string;
-  address: string;
-  dateOfBirth: number; // Assuming this is in milliseconds
-  registrationDate: number; // Assuming this is in milliseconds
-  department?: string; // This property is specific to Admin users
-  role?: string; // This property is specific to Admin users
-  superAdmin?: boolean; // This property is specific to Admin users
-  accessLevel?: number; // This property is specific to Admin users
-  desiredLocation?: string; // This property is specific to Property Seeker users
-  minBudget?: number; // This property is specific to Property Seeker users
-  maxBudget?: number; // This property is specific to Property Seeker users
-  preferredPropertyType?: string; // This property is specific to Property Seeker users
-  notificationEnabled?: boolean; // This property is specific to Property Seeker users
-  propertyType?: string; // This property is specific to Landlord users
-  numberOfProperties?: number; // This property is specific to Landlord users
-  company?: string; // This property is specific to Landlord users
-  active?: boolean; // This property is specific to Landlord users
-  rating?: number; // This property is specific to Landlord users
-  userType?: String;
+  address?: string| null;
+  dateOfBirth?: Date| null; // Assuming this is in milliseconds
+  registrationDate?: Date| null; // Assuming this is in milliseconds
+  department?: string| null; // This property is specific to Admin users
+  role?: string| null; // This property is specific to Admin users
+  superAdmin?: boolean| null; // This property is specific to Admin users
+  accessLevel?: number| null; // This property is specific to Admin users
+  desiredLocation?: string| null; // This property is specific to Property Seeker users
+  minBudget?: number| null; // This property is specific to Property Seeker users
+  maxBudget?: number| null; // This property is specific to Property Seeker users
+  preferredPropertyType?: string| null; // This property is specific to Property Seeker users
+  notificationEnabled?: boolean| null; // This property is specific to Property Seeker users
+  propertyType?: string| null; // This property is specific to Landlord users
+  numberOfProperties?: number| null; // This property is specific to Landlord users
+  company?: string| null; // This property is specific to Landlord users
+  active?: boolean| null; // This property is specific to Landlord users
+  rating?: number| null; // This property is specific to Landlord users
+  userType?: String| null;
 }

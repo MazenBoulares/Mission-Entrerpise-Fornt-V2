@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NgxDropzoneChangeEvent } from 'ngx-dropzone';
 import { ToastrService } from 'ngx-toastr';
+import { User } from 'src/app/shared/interface/interface';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -10,9 +11,11 @@ import Swal from 'sweetalert2';
 })
 export class UserMediaComponent {
 
+  @Input() user: User; // Declare user as an input property
+
   @Input() button: boolean = false;
 
-  @Output() activeSteps = new EventEmitter<number>();
+  @Output() activeSteps = new EventEmitter<{ step: number, user: User }>();
 
   public files: File[] = [];
   public activeStep: number = 3;
@@ -30,7 +33,7 @@ export class UserMediaComponent {
 
   previous() {
     const number = this.activeStep - 1;
-    this.activeSteps.emit(number);
+    this.activeSteps.emit({ step: number, user: this.user });
   }
 
   submit() {
