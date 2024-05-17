@@ -49,4 +49,9 @@ export class PropertyService {
   }
 
 
+
+  public deleteUser(userId: number|undefined): Observable<void> {
+    return this.http.delete<void>(`http://localhost:8082/users/${userId}`);
+  }
+
 }

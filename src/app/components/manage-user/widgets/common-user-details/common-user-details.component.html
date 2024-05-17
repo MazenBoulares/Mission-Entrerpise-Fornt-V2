@@ -1,4 +1,10 @@
 <div class="property-box">
+
+  
+  <button class="delete-button" (click)="deleteUser(userDetails)">
+    <i class="fas fa-trash-alt"></i>
+  </button>
+ 
   <div class="agent-image">
       <div [style.background-image]="'url('+userDetails.userImageUrl+')'" class="bg-size">  
         <img [src]="userDetails.userImageUrl" class="bg-img" alt="">  
@@ -10,6 +16,7 @@
         <span class="label label-shadow">{{ userDetails.property }} properties</span>
       } -->
       <div class="agent-overlay"></div>
+    
       <div class="overlay-content">
         <ul>
           <li><a href="https://www.google.com/" target="_blank"><img src="assets/images/about/icon-1.png" alt=""></a>
@@ -24,6 +31,7 @@
     </div> 
   </div>
   <div class="agent-content">
+    
     <h5>{{ userDetails.firstName +" "+ userDetails.lastName  }}</h5>
      <!-- <h5>{{ userDetails.firstName}}</h5> -->
      <p class="font-roboto">{{ userDetails.userType +" "+"User" }}</p>  
@@ -36,6 +44,9 @@
       <li><i class="fas fa-envelope"></i> {{ userDetails.email }}</li>
       <li><i class="fas fa-fax"></i> {{ userDetails.address }}</li>
     </ul> 
+    
     <a href="javascript:void(0)" [routerLink]="[type == 'agent' ? '/agents/agent-profile' : '/manage-user/user-profile']">View profile <i class="fas fa-arrow-right"></i></a>
+
+    
   </div>
 </div>

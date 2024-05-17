@@ -1,0 +1,47 @@
+.property-box {
+    position: relative; // Ensure the delete button is positioned relative to this container
+  
+    .delete-button {
+      position: absolute;
+      top: 10px; // Adjust as needed
+      right: 10px; // Adjust to place it on the right
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 20px; // Adjust the size as needed
+      color: #e64942; // Adjust the color as needed
+    }
+  
+    .delete-button:hover {
+      color: #d33; // Change color on hover
+    }
+  
+    .agent-image {
+      // Existing styles for agent-image
+    }
+  
+    .bg-size {
+      // Existing styles for bg-size
+    }
+  
+    .bg-img {
+      // Existing styles for bg-img
+    }
+  
+    .label {
+      // Existing styles for label
+    }
+  
+    .agent-overlay {
+      // Existing styles for agent-overlay
+    }
+  
+    .overlay-content {
+      // Existing styles for overlay-content
+    }
+  
+    .agent-content {
+      // Existing styles for agent-content
+    }
+  }
+  

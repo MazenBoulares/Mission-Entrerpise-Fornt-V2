@@ -52,12 +52,14 @@ export class UserMediaComponent {
       }).then((result) => {
         if (result.isConfirmed) {
           Swal.showLoading(); // Show loading indicator
+     
           this.uploadAndSubmit().then(() => {
+            
             Swal.close(); // Hide loading indicator after upload and submit
             // Reload the page after uploading and submitting
             setTimeout(() => {
               window.location.reload();
-            }, 3000);
+            }, 2000);
           }).catch(error => {
             Swal.close(); // Hide loading indicator if error occurs
             console.error('Error occurred during upload and submit:', error);
