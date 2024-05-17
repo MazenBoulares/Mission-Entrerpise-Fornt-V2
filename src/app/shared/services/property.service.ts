@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { propertyDetails, users } from '../interface/interface';
+import { propertyDetails, users,User } from '../interface/interface';
 import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +17,22 @@ export class PropertyService {
     return this.http.get<propertyDetails[]>('assets/data/property.json')
   }
 
-  // Users Data
+  // // Users Data
   public getUsers(): Observable<users[]>{
     return this.http.get<users[]>('assets/data/users.json')
+  }
+
+
+  public getUsers2(): Observable<User[]> {
+    return this.http.get<User[][]>('http://localhost:8082/users').pipe(
+      map((data: User[][]) => {
+        if (data.length > 0) {
+          return data[0]; // Return the array of user objects
+        } else {
+          return []; // Return an empty array if data is empty or undefined
+        }
+      })
+    );
   }
 
 }

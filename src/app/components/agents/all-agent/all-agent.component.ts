@@ -11,9 +11,9 @@ export class AllAgentComponent {
 
   public userData: users[];
 
-  constructor(private propertyService: PropertyService){
-    this.propertyService.getUsers().subscribe(response => {
-      this.userData = response;
-    })
-  }
+  // constructor(private propertyService: PropertyService){
+  //   // this.propertyService.getUsers().subscribe(response => {
+  //   //   this.userData = response;
+  //   })
+  // }
 }

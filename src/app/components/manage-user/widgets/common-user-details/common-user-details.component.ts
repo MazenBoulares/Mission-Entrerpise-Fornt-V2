@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { users } from '../../../../shared/interface/interface';
+import { User, users } from '../../../../shared/interface/interface';
 
 @Component({
   selector: 'app-common-user-details',
@@ -8,7 +8,7 @@ import { users } from '../../../../shared/interface/interface';
 })
 export class CommonUserDetailsComponent {
 
-  @Input() userDetails: users;
+  @Input() userDetails: User;
   @Input() property: boolean;
   @Input() type: string;
 
@@ -16,15 +16,16 @@ export class CommonUserDetailsComponent {
   public mobileNumber: string;
 
   ngOnInit(){
-    this.mobileNumber = this.userDetails.mobile.replace(this.userDetails.mobile.slice(-4), '****' );
+    this.mobileNumber = this.userDetails.phoneNumber.replace(this.userDetails.phoneNumber.slice(-4), '****' );
+    console.log(this.mobileNumber)
   }
 
-  showMobile(data: users){
+  showMobile(data: User){
     this.isMobile =! this.isMobile;
     if(this.isMobile){
-      this.mobileNumber = data.mobile
+      this.mobileNumber = data.phoneNumber
     }else{
-      this.mobileNumber = data.mobile.replace(data.mobile.slice(-4),"****");
+      this.mobileNumber = data.phoneNumber.replace(data.phoneNumber.slice(-4),"****");
     }
   }
 }
