@@ -1,7 +1,8 @@
 <div class="property-box">
   <div class="agent-image">
-    <!-- <div [style.background-image]="'url('+userDetails.img+')'" class="bg-size"> -->
-      <!-- < <img [src]="userDetails.img" class="bg-img" alt="">  -->
+      <div [style.background-image]="'url('+userDetails.userImageUrl+')'" class="bg-size">  
+        <img [src]="userDetails.userImageUrl" class="bg-img" alt="">  
+        <span class="label label-shadow">New user</span>
       <!-- @if(userDetails.newUser){
         <span class="label label-shadow">New user</span>
       } -->
@@ -19,8 +20,8 @@
           </li>
         </ul>
         <span>Connect</span>
-      <!-- </div> -->
-    <!-- </div> -->
+       </div> 
+    </div> 
   </div>
   <div class="agent-content">
     <h5>{{ userDetails.firstName +" "+ userDetails.lastName  }}</h5>

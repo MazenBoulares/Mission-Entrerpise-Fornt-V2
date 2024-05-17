@@ -3,6 +3,8 @@ import { NgxDropzoneChangeEvent } from 'ngx-dropzone';
 import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/shared/interface/interface';
 import Swal from 'sweetalert2';
+import { PropertyService} from 'src/app/shared/services/property.service';
+import { ImageUploadService } from 'src/app/shared/services/image-upload.service';
 
 @Component({
   selector: 'app-user-media',
@@ -18,10 +20,11 @@ export class UserMediaComponent {
   @Output() activeSteps = new EventEmitter<{ step: number, user: User }>();
 
   public files: File[] = [];
+  imageUrls: string[] = [];
   public activeStep: number = 3;
   public validation:boolean = false;
 
-  constructor(private toast: ToastrService){}
+  constructor(private toast: ToastrService, private propertyService: PropertyService,private imageUploadService: ImageUploadService){}
 
   onSelect(event: NgxDropzoneChangeEvent) {
     this.files.push(...event.addedFiles);
@@ -37,7 +40,7 @@ export class UserMediaComponent {
   }
 
   submit() {
-    if(this.files.length >= 1){
+    if (this.files.length >= 1) {
       Swal.fire({
         title: 'Are you sure you want to submit the form?',
         text: 'please check account details',
@@ -48,16 +51,20 @@ export class UserMediaComponent {
         cancelButtonColor: '#efefef',
       }).then((result) => {
         if (result.isConfirmed) {
-          setTimeout(() => {
-            window.location.reload();
-          }, 3000);
-
-          this.toast.success('Your Account created successfully.','', {
-            timeOut: 3000,
+          Swal.showLoading(); // Show loading indicator
+          this.uploadAndSubmit().then(() => {
+            Swal.close(); // Hide loading indicator after upload and submit
+            // Reload the page after uploading and submitting
+            setTimeout(() => {
+              window.location.reload();
+            }, 3000);
+          }).catch(error => {
+            Swal.close(); // Hide loading indicator if error occurs
+            console.error('Error occurred during upload and submit:', error);
           });
         }
       });
-    }else{
+    } else {
       this.validation = true;
       Swal.fire({
         title: 'Please upload a file',
@@ -65,4 +72,75 @@ export class UserMediaComponent {
       });
     }
   }
+  
+  async uploadAndSubmit() {
+    await this.onUpload(); // Wait for file uploads to complete
+   this.user.userImageUrl=this.imageUrls[0];
+    // Submit the user details
+    return new Promise<void>((resolve, reject) => {
+      
+      this.propertyService.submitPropertySeeker(this.user).subscribe(
+        response => {
+          console.log('User submitted successfully', response);
+          this.activeSteps.emit({ step: this.activeStep, user: this.user });
+          this.toast.success('Your Account created successfully.', '', { timeOut: 3000 });
+          resolve();
+        },
+        error => {
+          this.toast.error('Account Creation Failed.', '', { timeOut: 3000 });
+          console.error('Error submitting user', error);
+          reject(error);
+        }
+      );
+    });
+  }
+
+
+  onUpload(): Promise<void> {
+    return new Promise((resolve, reject) => {
+      if (this.files.length > 0) {
+        let currentIndex = 0;
+        const uploadNextFile = () => {
+          if (currentIndex < this.files.length) {
+            const file = this.files[currentIndex];
+            this.imageUploadService.uploadImage(file).subscribe(
+              (response) => {
+                if (response && response.data && response.data.url) {
+                  this.imageUrls.push(response.data.url);
+                  console.log('Uploaded Image URL:', response.data.url);
+
+                  currentIndex++;
+                  uploadNextFile();
+                }
+              },
+              error => {
+                console.error('Upload failed for file:', file.name);
+                reject(error);
+              }
+            );
+          } else {
+            resolve(); // All files are uploaded
+          }
+        };
+        uploadNextFile();
+      } else {
+        console.error('No files selected.');
+        reject('No files selected.');
+      }
+    });
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

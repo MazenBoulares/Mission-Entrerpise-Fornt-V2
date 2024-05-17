@@ -33,7 +33,8 @@ export class AddUserWizardComponent {
     minBudget: 1000,  // Add the appropriate budget here
     maxBudget: 2000,
     preferredPropertyType: '',
-    notificationEnabled: true
+    notificationEnabled: true,
+    userImageUrl:null
   };
 
  

@@ -154,7 +154,7 @@ console.log("insideeeeeeeeeeeeee");
       // this.propertyService.submitPropertySeeker(this.user).subscribe(
       //   response => {
       //     console.log('User submitted successfully', response);
-      //     this.activeSteps.emit(this.activeStep + 1);
+      //     this.activeSteps.emit({ step: number, user: this.user });
 
       //     // Emitting the user data to the parent component
     

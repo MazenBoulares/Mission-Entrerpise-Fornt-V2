@@ -140,4 +140,5 @@ export interface User {
   active?: boolean| null; // This property is specific to Landlord users
   rating?: number| null; // This property is specific to Landlord users
   userType?: String| null;
+  userImageUrl?:String|null;
 }
