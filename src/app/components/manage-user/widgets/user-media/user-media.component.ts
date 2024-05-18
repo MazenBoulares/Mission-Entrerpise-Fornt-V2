@@ -5,6 +5,7 @@ import { User } from 'src/app/shared/interface/interface';
 import Swal from 'sweetalert2';
 import { PropertyService} from 'src/app/shared/services/property.service';
 import { ImageUploadService } from 'src/app/shared/services/image-upload.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-user-media',
@@ -52,9 +53,9 @@ export class UserMediaComponent {
       }).then((result) => {
         if (result.isConfirmed) {
           Swal.showLoading(); // Show loading indicator
-     
+  
           this.uploadAndSubmit().then(() => {
-            
+  
             Swal.close(); // Hide loading indicator after upload and submit
             // Reload the page after uploading and submitting
             setTimeout(() => {
@@ -77,11 +78,29 @@ export class UserMediaComponent {
   
   async uploadAndSubmit() {
     await this.onUpload(); // Wait for file uploads to complete
-   this.user.userImageUrl=this.imageUrls[0];
+    this.user.userImageUrl = this.imageUrls[0];
+  
+    // Determine the appropriate API endpoint based on user type
+    let submitApi: Observable<User>;
+
+    console.log("the user type :", this.user.userType)
+  
+    switch (this.user.userType) {
+      case 'ADMIN':
+        submitApi = this.propertyService.submitAdmin(this.user);
+        break;
+      case 'LANDLORD':
+        submitApi = this.propertyService.submitLandlord(this.user);
+        break;
+      case 'PROPERTY_SEEKER':
+      default:
+        submitApi = this.propertyService.submitPropertySeeker(this.user);
+        break;
+    }
+  
     // Submit the user details
     return new Promise<void>((resolve, reject) => {
-      
-      this.propertyService.submitPropertySeeker(this.user).subscribe(
+      submitApi.subscribe(
         response => {
           console.log('User submitted successfully', response);
           this.activeSteps.emit({ step: this.activeStep, user: this.user });
@@ -96,6 +115,7 @@ export class UserMediaComponent {
       );
     });
   }
+  
 
 
   onUpload(): Promise<void> {

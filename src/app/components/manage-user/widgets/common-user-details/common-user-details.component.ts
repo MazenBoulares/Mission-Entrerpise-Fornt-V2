@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { User, users } from '../../../../shared/interface/interface';
 import { PropertyService } from 'src/app/shared/services/property.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-common-user-details',
@@ -23,7 +24,7 @@ export class CommonUserDetailsComponent {
   public isMobile: boolean = false;
   public mobileNumber: string;
 
-  constructor(private propertyService: PropertyService, private toastr: ToastrService){}
+  constructor(private router: Router, private propertyService: PropertyService, private toastr: ToastrService){}
 
   ngOnInit(){
     this.mobileNumber = this.userDetails.phoneNumber.replace(this.userDetails.phoneNumber.slice(-4), '****' );
@@ -79,6 +80,11 @@ export class CommonUserDetailsComponent {
   }
 
 
+  editUser() {
+    // Navigate to the edit user component and pass the user data
+    this.router.navigate(['/manage-user/edit-user'], { state: { user: this.userDetails } });
+  }
 
 
+  
 }

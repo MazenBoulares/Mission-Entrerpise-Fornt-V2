@@ -39,6 +39,14 @@ const routes: Routes = [
       breadcrumb: "Edit User"
     }
   },
+  // {
+  //   path: 'edit-user/:id', // Assuming you pass the user ID as a route parameter
+  //   component: EditUserComponent,
+  //   data: {
+  //     title: "Edit User",
+  //     breadcrumb: "Edit User"
+  //   }
+  // },
    {
     path: 'all-user',
     component: AllUserComponent,

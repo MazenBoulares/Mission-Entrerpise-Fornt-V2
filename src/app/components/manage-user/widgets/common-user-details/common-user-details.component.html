@@ -4,6 +4,11 @@
   <button class="delete-button" (click)="deleteUser(userDetails)">
     <i class="fas fa-trash-alt"></i>
   </button>
+
+   <!-- Add the edit button here -->
+   <button class="edit-button" (click)="editUser()">
+    <i class="fas fa-pencil-alt"></i>
+  </button>
  
   <div class="agent-image">
       <div [style.background-image]="'url('+userDetails.userImageUrl+')'" class="bg-size">  

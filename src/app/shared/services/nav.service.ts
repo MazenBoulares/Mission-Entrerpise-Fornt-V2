@@ -32,19 +32,19 @@ export class NavService {
       level: 1,
       path: '/dashboard'
     },
-    // {
-    //   title: 'My properties',
-    //   icon: 'grid',
-    //   type: 'sub',
-    //   active: false,
-    //   level: 1,
-    //   children: [
-    //     { path: '/property/add-property', title: 'Add Property', type: 'link',level: 2, icon: 'chevrons-right' },
-    //     { path: '/property/edit-property', title: 'Edit Property', type: 'link',level: 2 , icon: 'chevrons-right'},
-    //     { path: '/property/property-list', title: 'Property List', type: 'link',level: 2 , icon: 'chevrons-right'},
-    //     { path: '/property/favourites', title: 'Favourites', type: 'link',level: 2 , icon: 'chevrons-right'},
-    //   ],
-    // },
+    {
+      title: 'My properties',
+      icon: 'grid',
+      type: 'sub',
+      active: false,
+      level: 1,
+      children: [
+        { path: '/property/add-property', title: 'Add Property', type: 'link',level: 2, icon: 'chevrons-right' },
+        { path: '/property/edit-property', title: 'Edit Property', type: 'link',level: 2 , icon: 'chevrons-right'},
+        { path: '/property/property-list', title: 'Property List', type: 'link',level: 2 , icon: 'chevrons-right'},
+        { path: '/property/favourites', title: 'Favourites', type: 'link',level: 2 , icon: 'chevrons-right'},
+      ],
+    },
     {
       title: 'Manage users',
       icon: 'users',
@@ -52,8 +52,8 @@ export class NavService {
       active: false,
       level: 1,
       children: [
-        { path: '/manage-user/user-profile', title: 'Profile', type: 'link',level: 2 , icon: 'chevrons-right'},
-        { path: '/manage-user/add-user', title: 'Add user', type: 'link',level: 2 , icon: 'chevrons-right'},
+        // { path: '/manage-user/user-profile', title: 'Profile', type: 'link',level: 2 , icon: 'chevrons-right'},
+        // { path: '/manage-user/add-user', title: 'Add user', type: 'link',level: 2 , icon: 'chevrons-right'},
         { path: '/manage-user/add-user-wizard', title: 'Add user wizard', type: 'link',level: 2 , icon: 'chevrons-right', badge: true, badgeText: 'New'},
         { path: '/manage-user/edit-user', title: 'Edit user', type: 'link',level: 2 , icon: 'chevrons-right'},
         { path: '/manage-user/all-user', title: 'All users', type: 'link',level: 2 , icon: 'chevrons-right'},
@@ -95,14 +95,14 @@ export class NavService {
     //     { path: '/type/condominium', title: 'Condominium', type: 'link',level: 2 , icon: 'chevrons-right'}
     //   ],
     // },
-    // {
-    //   title: 'Reports',
-    //   icon: 'bar-chart-2',
-    //   type: 'link',
-    //   active: false,
-    //   level: 1,
-    //   path: '/reports'
-    // },
+    {
+      title: 'Reports',
+      icon: 'bar-chart-2',
+      type: 'link',
+      active: false,
+      level: 1,
+      path: '/reports'
+    },
     // {
     //   title: 'Payments',
     //   icon: 'credit-card',

@@ -30,14 +30,107 @@
     </div>
   }
 
-  <!-- <div class="form-group col-md-4 col-sm-6">
+  <div class="form-group col-md-4 col-sm-6">
     <label>User Type <span class="font-danger">*</span></label>
-    <select class="form-control" formControlName="gender" [ngClass]="{ 'is-invalid' : (gender?.touched || validate) && gender?.errors && type == 'wizard' , 'is-valid' : !gender?.errors && type == 'wizard'}">
-      <option value="">Proprety Seeker</option>
-      <option value="male">Landlord</option>
-      <option value="female">Admin</option>
+    <!-- <select class="form-control" formControlName="gender" [ngClass]="{ 'is-invalid' : (gender?.touched || validate) && gender?.errors && type == 'wizard' , 'is-valid' : !gender?.errors && type == 'wizard'}"> -->
+      <select class="form-control" formControlName="userType" (change)="onUserTypeChange($event)">
+        
+        <option value="">Select User Type</option>
+        <option value="ADMIN">Admin</option>
+        <option value="LANDLORD">Landlord</option>
+        <option value="PROPERTY_SEEKER">Property Seeker</option>
     </select>
-  </div> -->
+  </div>
+
+
+
+<!-- Admin Specific Fields -->
+<div *ngIf="userType === 'ADMIN'" class="form-group col-md-4 col-sm-6">
+  <label>Department <span class="font-danger">*</span></label>
+  <input type="text" class="form-control" formControlName="department">
+</div>
+<div *ngIf="userType === 'ADMIN'" class="form-group col-md-4 col-sm-6">
+  <label>Role <span class="font-danger">*</span></label>
+  <input type="text" class="form-control" formControlName="role">
+</div>
+<div *ngIf="userType === 'ADMIN'" class="form-group col-md-4 col-sm-6">
+  <label>Super Admin <span class="font-danger">*</span></label>
+  <input type="checkbox" class="form-control" formControlName="superAdmin">
+</div>
+<div *ngIf="userType === 'ADMIN'" class="form-group col-md-4 col-sm-6">
+  <label>Access Level <span class="font-danger">*</span></label>
+  <input type="number" class="form-control" formControlName="accessLevel">
+</div>
+
+<!-- Landlord Specific Fields -->
+<div *ngIf="userType === 'LANDLORD'" class="form-group col-md-4 col-sm-6">
+  <label>Property Type <span class="font-danger">*</span></label>
+  <input type="text" class="form-control" formControlName="propertyType">
+</div>
+<div *ngIf="userType === 'LANDLORD'" class="form-group col-md-4 col-sm-6">
+  <label>Number of Properties <span class="font-danger">*</span></label>
+  <input type="number" class="form-control" formControlName="numberOfProperties">
+</div>
+<div *ngIf="userType === 'LANDLORD'" class="form-group col-md-4 col-sm-6">
+  <label>Company <span class="font-danger">*</span></label>
+  <input type="text" class="form-control" formControlName="company">
+</div>
+<div *ngIf="userType === 'LANDLORD'" class="form-group col-md-4 col-sm-6">
+  <label>Active <span class="font-danger">*</span></label>
+  <input type="checkbox" class="form-control" formControlName="active">
+</div>
+<div *ngIf="userType === 'LANDLORD'" class="form-group col-md-4 col-sm-6">
+  <label>Rating <span class="font-danger">*</span></label>
+  <input type="number" class="form-control" formControlName="rating">
+</div>
+
+<!-- Property Seeker Specific Fields -->
+<div *ngIf="userType === 'PROPERTY_SEEKER'" class="form-group col-md-4 col-sm-6">
+  <label>Desired Location <span class="font-danger">*</span></label>
+  <input type="text" class="form-control" formControlName="desiredLocation">
+</div>
+<div *ngIf="userType === 'PROPERTY_SEEKER'" class="form-group col-md-4 col-sm-6">
+  <label>Min Budget <span class="font-danger">*</span></label>
+  <input type="number" class="form-control" formControlName="minBudget">
+</div>
+<div *ngIf="userType === 'PROPERTY_SEEKER'" class="form-group col-md-4 col-sm-6">
+  <label>Max Budget <span class="font-danger">*</span></label>
+  <input type="number" class="form-control" formControlName="maxBudget">
+</div>
+<div *ngIf="userType === 'PROPERTY_SEEKER'" class="form-group col-md-4 col-sm-6">
+  <label>Preferred Property Type <span class="font-danger">*</span></label>
+  <input type="text" class="form-control" formControlName="preferredPropertyType">
+</div>
+<div *ngIf="userType === 'PROPERTY_SEEKER'" class="form-group col-md-4 col-sm-6">
+  <label>Notification Enabled <span class="font-danger">*</span></label>
+  <input type="checkbox" class="form-control" formControlName="notificationEnabled">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

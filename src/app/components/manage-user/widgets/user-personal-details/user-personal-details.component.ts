@@ -33,6 +33,7 @@ export class UserPersonalDetailsComponent {
   public currentPageURL: string = '';
   public formOption: string = '';
   public dob: string = '';
+  public userType: string;
 
 
 
@@ -59,54 +60,119 @@ export class UserPersonalDetailsComponent {
     notificationEnabled: true
   };
 
- 
+  // public user: User;
 
 
 
 
 
+  ngOnInit() {
+  
+
+  }
 
 
 
 
 
-  constructor(private router: Router, private propertyService: PropertyService){
-    this.currentPageURL = this.router.url;
-    if(window.location.pathname == '/manage-user/add-user' || window.location.pathname == '/agents/add-agent'){
-      this.formOption = 'Add'
-    }else if(window.location.pathname == '/manage-user/edit-user' || window.location.pathname == '/agents/edit-agent'){
-      this.formOption = 'Edit'
-    }
+  // constructor(private router: Router, private propertyService: PropertyService){
+  //   this.currentPageURL = this.router.url;
+  //   if(window.location.pathname == '/manage-user/add-user' || window.location.pathname == '/agents/add-agent'){
+  //     this.formOption = 'Add'
+  //   }else if(window.location.pathname == '/manage-user/edit-user' || window.location.pathname == '/agents/edit-agent'){
+  //     this.formOption = 'Edit'
+  //     console.log("blablablablablab")
 
-    if(this.formOption == 'Edit'){
-      this.firstName = 'Paige';
-      this.lastName = 'Turner';
-      this.genderValue = 'feMale'
-      this.phoneNumber = 7596140312;
-      this.emailAddress = 'turner@gmail.in';
-      this.dob = '18/10/2023'
-    }
+      
+  //   const navigation = this.router.getCurrentNavigation();
+  //   if (navigation && navigation.extras && navigation.extras.state) {
+  //     this.user = navigation.extras.state['user'];
+  //     console.log(this.user)
+  //     this.myForm.patchValue({
+  //       first_name: this.user.firstName,
+  //       last_name: this.user.lastName,
+  //       phone: this.user.phoneNumber,
+  //       date: this.user.dateOfBirth,
+  //     });
+  //   } 
+
+   
+  //   }
 
 
 
-    // Initialize form with default values
+  //   // if(this.formOption == 'Edit'){
+  //   //   this.user = navigation.extras.state.user;
+
+
+  //   //   this.firstName = user.;
+  //   //   this.lastName = 'Turner';
+  //   //   // this.genderValue = 'feMale'
+  //   //   this.phoneNumber = 7596140312;
+  //   //   this.emailAddress = 'turner@gmail.in';
+  //   //   this.dob = '18/10/2023'
+  //   // }
+
+
+
+  //   // Initialize form with default values
+  //   this.myForm = new FormGroup({
+  //     first_name: new FormControl(this.user.firstName, Validators.required),
+  //     last_name: new FormControl(this.user.lastName, Validators.required),
+  //     phone: new FormControl(this.user.phoneNumber, [
+  //       Validators.required,
+  //       Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$'),
+  //       Validators.minLength(10),
+  //       Validators.maxLength(10)
+  //     ]),
+  //     // gender: new FormControl('', Validators.required),
+  //     date: new FormControl(this.user.dateOfBirth, Validators.required),
+  //   });
+
+
+
+    
+  
+
+  // }
+
+  constructor(private router: Router, private propertyService: PropertyService) {
     this.myForm = new FormGroup({
-      first_name: new FormControl(this.user.firstName, Validators.required),
-      last_name: new FormControl(this.user.lastName, Validators.required),
-      phone: new FormControl(this.user.phoneNumber, [
+      first_name: new FormControl('', Validators.required),
+      last_name: new FormControl('', Validators.required),
+      phone: new FormControl('', [
         Validators.required,
         Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$'),
         Validators.minLength(10),
         Validators.maxLength(10)
       ]),
-      // gender: new FormControl('', Validators.required),
-      date: new FormControl(this.user.dateOfBirth, Validators.required),
+      date: new FormControl(null, Validators.required),
     });
-
-
-
+  
+    this.currentPageURL = this.router.url;
+    if (window.location.pathname == '/manage-user/add-user' || window.location.pathname == '/agents/add-agent') {
+      this.formOption = 'Add'
+    } else if (window.location.pathname == '/manage-user/edit-user' || window.location.pathname == '/agents/edit-agent') {
+      this.formOption = 'Edit'
+      console.log("blablablablablab")
+      
+      const navigation = this.router.getCurrentNavigation();
+      if (navigation && navigation.extras && navigation.extras.state) {
+        this.user = navigation.extras.state['user'];
+        console.log(this.user)
+        this.myForm.patchValue({
+          first_name: this.user.firstName,
+          last_name: this.user.lastName,
+          phone: this.user.phoneNumber,
+          date: this.user.dateOfBirth,
+        });
+      } 
+    }
   }
+  
 
+
+ 
 
   // next() {
   //   this.validate = true;
@@ -172,12 +238,62 @@ console.log("insideeeeeeeeeeeeee");
 
 
      
-
-
-
-    
     }
   }
+
+  onUserTypeChange(event: any) {
+    this.userType = event.target.value;
+    this.updateFormFields();
+  }
+
+
+
+  updateFormFields() {
+    // Clear existing dynamic form controls
+    this.clearDynamicFormFields();
+
+    if (this.userType === 'ADMIN') {
+      this.user.userType='ADMIN';
+      this.myForm.addControl('department', new FormControl(this.user.department, Validators.required));
+      this.myForm.addControl('role', new FormControl(this.user.role, Validators.required));
+      this.myForm.addControl('superAdmin', new FormControl(this.user.superAdmin, Validators.required));
+      this.myForm.addControl('accessLevel', new FormControl(this.user.accessLevel, Validators.required));
+    } else if (this.userType === 'LANDLORD') {
+      this.user.userType='LANDLORD';
+      this.myForm.addControl('propertyType', new FormControl(this.user.propertyType, Validators.required));
+      this.myForm.addControl('numberOfProperties', new FormControl(this.user.numberOfProperties, Validators.required));
+      this.myForm.addControl('company', new FormControl(this.user.company, Validators.required));
+      this.myForm.addControl('active', new FormControl(this.user.active, Validators.required));
+      this.myForm.addControl('rating', new FormControl(this.user.rating, Validators.required));
+    } else if (this.userType === 'PROPERTY_SEEKER') {
+      this.user.userType='PROPERTY_SEEKER';
+      this.myForm.addControl('desiredLocation', new FormControl(this.user.desiredLocation, Validators.required));
+      this.myForm.addControl('minBudget', new FormControl(this.user.minBudget, Validators.required));
+      this.myForm.addControl('maxBudget', new FormControl(this.user.maxBudget, Validators.required));
+      this.myForm.addControl('preferredPropertyType', new FormControl(this.user.preferredPropertyType, Validators.required));
+      this.myForm.addControl('notificationEnabled', new FormControl(this.user.notificationEnabled, Validators.required));
+    }
+    }
+    
+    clearDynamicFormFields() {
+    // Remove existing dynamic form controls
+    this.myForm.removeControl('department');
+    this.myForm.removeControl('role');
+    this.myForm.removeControl('superAdmin');
+    this.myForm.removeControl('accessLevel');
+    this.myForm.removeControl('propertyType');
+    this.myForm.removeControl('numberOfProperties');
+    this.myForm.removeControl('company');
+    this.myForm.removeControl('active');
+    this.myForm.removeControl('rating');
+    this.myForm.removeControl('desiredLocation');
+    this.myForm.removeControl('minBudget');
+    this.myForm.removeControl('maxBudget');
+    this.myForm.removeControl('preferredPropertyType');
+    this.myForm.removeControl('notificationEnabled');
+    }
+
+
 
 
 
