@@ -15,27 +15,29 @@
         }
       </owl-carousel-o>
     </div>
-    <div class="labels-left">
-      @for(labels of propertyData.labels; track labels){
-        <div>
-          @if(labels.includes('sale')){
-            <span class="label label-shadow">Sale</span>
+      <div class="labels-left" >
+          @for(labels of propertyData.labels; track labels){
+              <div>
+                  @if(labels.includes('Rejected')){
+                      <div onClick="changePropertyLabel(propertyData.id)">
+                          <span class="label label-dark">Rejected</span>
+                      </div>
+                  }
+                  @if(labels.includes('Approved')){
+                      <div onClick="changePropertyLabel(propertyData.id)">
+                          <span class="label label-success">Approved</span>
+                      </div>
+                  }
+                  @if(labels.includes('Pending')){
+                      <div onClick="changePropertyLabel(propertyData.id)">
+                          <span class="label label-shadow">Pending</span>
+                      </div>
+                  }
+              </div>
           }
-          @if(labels.includes('fees')){
-            <div>
-              <span class="label label-dark">no fees</span>
-            </div>
-          }
-          @if(labels.includes('openHouse')){
-            <span class="label label-success">open house</span>
-          }
-          @if(labels.includes('sold')){
-            <span class="label label-shadow">Sold</span>
-          }
-        </div>
-      }
-    </div>
-    <div class="seen-data">
+      </div>
+
+      <div class="seen-data">
       <app-feather-icons [icon]="'camera'"></app-feather-icons>
       <span>{{ propertyData.img.length }}</span>
     </div>

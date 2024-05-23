@@ -32,19 +32,19 @@ export class NavService {
       level: 1,
       path: '/dashboard'
     },
-    // {
-    //   title: 'My properties',
-    //   icon: 'grid',
-    //   type: 'sub',
-    //   active: false,
-    //   level: 1,
-    //   children: [
-    //     { path: '/property/add-property', title: 'Add Property', type: 'link',level: 2, icon: 'chevrons-right' },
-    //     { path: '/property/edit-property', title: 'Edit Property', type: 'link',level: 2 , icon: 'chevrons-right'},
-    //     { path: '/property/property-list', title: 'Property List', type: 'link',level: 2 , icon: 'chevrons-right'},
-    //     { path: '/property/favourites', title: 'Favourites', type: 'link',level: 2 , icon: 'chevrons-right'},
-    //   ],
-    // },
+    {
+      title: 'My properties',
+      icon: 'grid',
+      type: 'sub',
+      active: false,
+      level: 1,
+      children: [
+        { path: '/property/add-property', title: 'Add Property', type: 'link',level: 2, icon: 'chevrons-right' },
+        { path: '/property/edit-property', title: 'Edit Property', type: 'link',level: 2 , icon: 'chevrons-right'},
+        { path: '/property/property-list', title: 'Property List', type: 'link',level: 2 , icon: 'chevrons-right'},
+        { path: '/property/favourites', title: 'Favourites', type: 'link',level: 2 , icon: 'chevrons-right'},
+      ],
+    },
     {
       title: 'Manage users',
       icon: 'users',
@@ -59,21 +59,21 @@ export class NavService {
         { path: '/manage-user/all-user', title: 'All users', type: 'link',level: 2 , icon: 'chevrons-right'},
       ],
     },
-    // {
-    //   title: 'Agents',
-    //   icon: 'user-plus',
-    //   type: 'sub',
-    //   active: false,
-    //   level: 1,
-    //   children: [
-    //     { path: '/agents/agent-profile', title: 'Profile', type: 'link',level: 2 , icon: 'chevrons-right'},
-    //     { path: '/agents/add-agent', title: 'Add agent', type: 'link',level: 2 , icon: 'chevrons-right'},
-    //     { path: '/agents/add-agent-wizard', title: 'Add agent wizard', type: 'link',level: 2 , icon: 'chevrons-right', badge: true, badgeText: 'New'},
-    //     { path: '/agents/edit-agent', title: 'Edit agent', type: 'link',level: 2 , icon: 'chevrons-right'},
-    //     { path: '/agents/all-agent', title: 'All agents', type: 'link',level: 2 , icon: 'chevrons-right'},
-    //     { path: '/agents/invoice', title: 'Invoice', type: 'link',level: 2 , icon: 'chevrons-right'},
-    //   ],
-    // },
+    {
+      title: 'Agents',
+      icon: 'user-plus',
+      type: 'sub',
+      active: false,
+      level: 1,
+      children: [
+        { path: '/agents/agent-profile', title: 'Profile', type: 'link',level: 2 , icon: 'chevrons-right'},
+        { path: '/agents/add-agent', title: 'Add agent', type: 'link',level: 2 , icon: 'chevrons-right'},
+        { path: '/agents/add-agent-wizard', title: 'Add agent wizard', type: 'link',level: 2 , icon: 'chevrons-right', badge: true, badgeText: 'New'},
+        { path: '/agents/edit-agent', title: 'Edit agent', type: 'link',level: 2 , icon: 'chevrons-right'},
+        { path: '/agents/all-agent', title: 'All agents', type: 'link',level: 2 , icon: 'chevrons-right'},
+        { path: '/agents/invoice', title: 'Invoice', type: 'link',level: 2 , icon: 'chevrons-right'},
+      ],
+    },
     // {
     //   title: 'Map',
     //   icon: 'map-pin',
@@ -111,17 +111,17 @@ export class NavService {
     //   level: 1,
     //   path: '/payments'
     // },
-    {
-      title: 'Authentication',
-      icon: 'unlock',
-      type: 'sub',
-      active: false,
-      level: 1,
-      children: [
-        { path: '/authentication/log-in', title: 'Log in', type: 'link',level: 2 , icon: 'chevrons-right'},
-        { path: '/authentication/sign-up', title: 'sign up', type: 'link',level: 2 , icon: 'chevrons-right'},
-        { path: '/authentication/404', title: '404', type: 'link',level: 2 , icon: 'chevrons-right'},
-      ],
-    },
+    // {
+    //   title: 'Authentication',
+    //   icon: 'unlock',
+    //   type: 'sub',
+    //   active: false,
+    //   level: 1,
+    //   children: [
+    //     { path: '/authentication/log-in', title: 'Log in', type: 'link',level: 2 , icon: 'chevrons-right'},
+    //     { path: '/authentication/sign-up', title: 'sign up', type: 'link',level: 2 , icon: 'chevrons-right'},
+    //     { path: '/authentication/404', title: '404', type: 'link',level: 2 , icon: 'chevrons-right'},
+    //   ],
+    // },
   ]
 }
