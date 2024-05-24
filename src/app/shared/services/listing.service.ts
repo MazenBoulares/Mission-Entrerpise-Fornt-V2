@@ -36,4 +36,8 @@ export class ListingService {
   getAllListings(): Observable<Listing[]> {
     return this.http.get<Listing[]>(`${this.baseUrl}/getAll`);
   }
+
+  changePropertyStatus(propertyId: number,listingStatus:string): Observable<void> {
+    return this.http.put<void>(`http://localhost:8082/listing/changeStatus/${propertyId}/${listingStatus}`, null);
+  }
 }
