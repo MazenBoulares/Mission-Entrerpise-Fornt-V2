@@ -54,7 +54,4 @@ export class PropertyService {
     return this.http.delete<void>(`http://localhost:8082/users/${userId}`);
   }
 
-  changePropertyStatus(propertyId: number): Observable<void> {
-    return this.http.put<void>(`http://localhost:8082/property/changeStatus/${propertyId}`, null);
-  }
 }
